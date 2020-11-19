@@ -1,12 +1,16 @@
 <html>
 <head>
-<title>How are you today</title>
+<title>˗ˏˋITF LABˎˊ˗</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  p.ex1 {
+    margin-top: 25px;
+  }
+  </style>
 </head>
 <body>
 <?php
@@ -21,16 +25,14 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 
 <div class="container">
     <div class="form">
-        <p class="ex1"><h1><center>How are you today</center></h1></p>
+        <p class="ex1"><h1><center>꒰FORM =͟͟͞͞♡</center></h1></p>
     </div>
-  <table width="800" border="1" class="table table-dark table-hover table-striped" class="center" >
-    <thead class="thead-dark">
-    <tr class="active">
+  <table width="600" border="1" class="table table-dark table-striped" class="center" class="ex1">
+    <tr class="info">
       <th width="200"> <div align="center">Name</div></th>
-      <th width="500"> <div align="center">Felt</div></th>
-      <th width="100"> <div align="center">Action</div></th>
+      <th width="350"> <div align="center">Comment </div></th>
+      <th width="50"> <div align="center">Action</div></th>
     </tr>
-     </thead>
   <?php
   while($Result = mysqli_fetch_array($res))
   {
@@ -38,13 +40,13 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
     <tr>
       <td><center><?php echo $Result['Name'];?></center></td>
       <td><center><?php echo $Result['Comment'];?></center></td>
-      <td><center><a href="formindex.html"><input type="submit" value="Edit" class="btn-default"></a>&nbsp;&nbsp;<a href="formdelete.html"><input type="submit" value="Delete"  class="btn-default"></a></center></td>
+      <td><center><a href="form edit.html"><input type="submit" value="EDIT" class="btn btn-warning"></a>&nbsp;&nbsp;<a href="form delete.html"><input type="submit" value="DELETE"  class="btn btn-danger"></a></center></td>
     </tr>
   <?php
   }
   ?>
   </table>
-  <a href="forminsert.html"><input type="submit" value="ADD" class="btn-default btn-sm"></a>
+  <center><a href="form insert.html"><input type="submit" value="INSERT" class="btn btn-info"></a></center>
   <?php
   mysqli_close($conn);
   ?>
